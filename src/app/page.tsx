@@ -1,23 +1,74 @@
 "use client"
 
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {Button, Chip} from "@nextui-org/react";
 import { PhoneCallIcon, StarsIcon } from 'lucide-react';
 import { StarIcon } from '@heroicons/react/20/solid';
 import {Accordion, AccordionItem} from "@nextui-org/react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft, faArrowRight, faCircleCheck } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft, faArrowRight, faCircleCheck, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { Icon, IconProp } from '@fortawesome/fontawesome-svg-core';
 import Link from 'next/link';
 import Footer from './components/Footer';
 import { string } from 'zod';
-// import Header from './components/Header';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import Header from './components/Header';
 // import { FaCircleCheck } from 'react-icons/fa6';
 
 function DS() {
 
     const [isVertical, setIsVertical] = React.useState(true);
+    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen2, setIsOpen2] = useState(false);
+    const [isOpen3, setIsOpen3] = useState(false);
+    const [isOpen4, setIsOpen4] = useState(false);
+    const [isOpen5, setIsOpen5] = useState(false);
+    const [isOpen6, setIsOpen6] = useState(false);
+    const [isOpen7, setIsOpen7] = useState(false);
+    const [isOpen8, setIsOpen8] = useState(false);
+    const [isOpen9, setIsOpen9] = useState(false);
+    const [isOpen10, setIsOpen10] = useState(false);
+
+  const toggleAccordion = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const toggleAccordion2 = () => {
+    setIsOpen2(!isOpen2);
+  };
+
+  const toggleAccordion3 = () => {
+    setIsOpen3(!isOpen3);
+  };
+
+  const toggleAccordion4 = () => {
+    setIsOpen4(!isOpen4);
+  };
+
+  const toggleAccordion5 = () => {
+    setIsOpen5(!isOpen5);
+  };
+
+  const toggleAccordion6 = () => {
+    setIsOpen6(!isOpen6);
+  };
+
+  const toggleAccordion7 = () => {
+    setIsOpen7(!isOpen7);
+  };
+
+  const toggleAccordion8 = () => {
+    setIsOpen8(!isOpen8);
+  };
+
+  const toggleAccordion9 = () => {
+    setIsOpen9(!isOpen9);
+  };
+
+  const toggleAccordion10 = () => {
+    setIsOpen10(!isOpen10);
+  };
 
     const dummyMentors = [
       {
@@ -106,22 +157,51 @@ function DS() {
       // Add more dummy data as needed
     ];
 
+    // const handleArrowClick = (direction : string) => {
+    //   // Example logic for handling arrow clicks
+    //   console.log(`Arrow clicked: ${direction}`);
+    // };
+
     const [currentIndex, setCurrentIndex] = useState(0);
     const [currentIndex2, setCurrentIndex2] = useState(0);
 
     let displayedJobs = dummyMentors.slice(currentIndex, currentIndex + 3);
 
-    let displayedSkills = dummySkills.slice(currentIndex, currentIndex + 4);
+    let displayedSkills = dummySkills.slice(currentIndex2, currentIndex2 + 4);
 
     const handleArrowClick = (direction: string) => {
       if (direction === "left") {
-        setCurrentIndex((prevIndex) => (prevIndex === 0 ? dummyMentors.length - 1 : prevIndex - 1));
+        setCurrentIndex((prev) => (prev === 0 ? dummyMentors.length - 1 : prev - 1));
       } else {
-        setCurrentIndex((prevIndex) => (prevIndex === dummyMentors.length - 1 ? 0 : prevIndex + 1));
+        setCurrentIndex((prev) => (prev === dummyMentors.length - 1 ? 0 : prev + 1));
       }
     };
+
+    // useEffect(() => {
+    //   // Initialize Swiper when the component mounts
+    //   new Swiper('.swiper-container', {
+    //     // Optional parameters
+    //     direction: 'horizontal',
+    //     loop: true,
+    //     slidesPerView: 'auto', // Show as many slides as possible in the available space
+    //     spaceBetween: 20, // Adjust this value as needed for spacing between slides
+    //     speed: 5000, // Transition speed in milliseconds
+    //     effect: 'slide',
+  
+    //     // If you need pagination
+    //     pagination: {
+    //       el: '.swiper-pagination',
+    //     },
+  
+    //     // Navigation arrows
+    //     navigation: {
+    //       nextEl: '.swiper-button-next',
+    //       prevEl: '.swiper-button-prev',
+    //     },
+    //   });
+    // }, []);
     
-    const handleArrowClick2 = (direction: string) => {
+    const handleArrow = (direction: string) => {
       if (direction === "left") {
         setCurrentIndex2((prevIndex) => (prevIndex === 0 ? dummySkills.length - 1 : prevIndex - 1));
       } else {
@@ -131,169 +211,225 @@ function DS() {
 
 
   return (
-    <div>
-        <div className='flex flex-col justify-center items-center my-8 bg-white'>
+    <>
+     {/* <Header /> */}
+        <div className='flex relative flex-col justify-center items-center pt-20 bg-white'>
 
-        <div className='flex justify-around bg-gray-200 max-w-0.7 w-full rounded-2xl min-h-[400px]'>
+        <div className='flex justify-around bg-gray-100 max-w-0.7 w-full rounded-2xl min-h-[700px]'>
 
-            <div className='flex-col items-center justify-around p-8 w-3/5'>
+            <div className=' flex-col items-center justify-around p-8 w-1/2'>
 
                 <Chip color="primary" className='bg-green-400 px-3 py-2 rounded-lg'>BestSeller</Chip>
 
                 <br />
 
-                <h1 className='bg-gradient-to-r from-orange-400  to-red-600 inline-block text-transparent bg-clip-text text-4xl font-bold font-sans'>
+                <h1 className='bg-black inline-block text-transparent bg-clip-text text-4xl font-extrabold font-sans'>
                     Data Science GURU 2.0
                 </h1>
                 <br />
                 <br />
-                <p className='bgired-100 max-w-fit text-lg'>
+                <p className='bgired-100 max-w-fit text-lg text-gray-900'>
                 Join us as we take you on an exhilarating journey into the dynamic world of Digital Marketing with our comprehensive Beginners Certification Course, infused with the power of Artificial Intelligence (AI). Designed specifically for Beginners, Freshers and working professionals with less than two years of experience in entry-level digital marketing roles, this course is your passport to unlocking your potential in the digital marketing landscape and becoming industry-ready.
                 </p>
                 <br />
 
-                <div className='flex bg-gray-50 justify-between p-4 rounded-lg'>
-                    <div>
-                        <p className='text-gray-800'>Type</p>
-                        <h3 className='bg-gradient-to-r from-amber-400 via-orange-600 to-red-600 inline-block text-transparent bg-clip-text text-2xl font-bold font-sans'>Degree</h3>
-                    </div>
-                    <div>
-                        <p className='text-gray-800'>Start Date</p>
-                        <h3 className='bg-gradient-to-r from-amber-400 via-orange-600 to-red-600 inline-block text-transparent bg-clip-text text-2xl font-bold font-sans'>30 April 2024</h3>
-                    </div>
-                    <div>
-                        <p className='text-gray-800'>End Date</p>
-                        <h3 className='bg-gradient-to-r from-amber-400 via-orange-600 to-red-600 inline-block text-transparent bg-clip-text text-2xl font-bold font-sans'>30 April 2024</h3>
-                    </div>
-                    <div>
-                        <p className='text-gray-800'>Duration</p>
-                        <h3 className='bg-gradient-to-r from-amber-400 via-orange-600 to-red-600 inline-block text-transparent bg-clip-text text-2xl font-bold font-sans'>6 months</h3>
-                    </div>
-                </div>
+                 <div className='ml-3 text-sm text-slate-900 gap-4 flex-col flex ' >
+                <p className='text-3xl flex gap-3 font-bold'>
+                ₹ 5000 /-
+                </p>
+                <p className='text-base flex gap-3 bg-gradient-to-r from-amber-600 via-orange-700 to-red-800 text-transparent bg-clip-text font-bold'>
+                    {/* <StarIcon className='w-4 font-bold bg-gradient-to-r from-amber-600 via-orange-700 to-red-800 text-transparent bg-clip-text'/> */}
+                    Hurry! 327 people have already applied in the last 1 month
+                </p>
+                <p className='flex gap-3 bg-black  text-transparent bg-clip-text font-bold'>
+                    {/* <PhoneCallIcon size={16} className='font-bold'/> */}
+                    For enquiries call: 1800 210 2020
+                </p>
+            </div>
                 <br />
-                <div className='flex justify-center gap-8'>
-                    <Button className='border-2 border-blue-700 rounded-lg p-2 hover:bg-orange-400 hover:text-white'>
-                        Download Syllabus
-                    </Button>
-                    <Button className='bg-orange-400 hover:bg-orange-500 text-white font-bold rounded-lg p-2 min-w-44'>
+                <div className='flex gap-8'>
+                <Button className='bg-orange-400 hover:bg-orange-500 text-white font-bold rounded-lg p-2 min-w-44'>
                         Enroll Now
+                    </Button>
+                    <Button className='border-2 border-orange-500 rounded-lg p-2 hover:bg-orange-500 hover:text-white min-w-44'>
+                        Download Syllabus
                     </Button>
                 </div>
 
 
             <br />
-            <div className='ml-3 text-sm text-slate-900 gap-4 flex-col flex ' >
-                <p className='text-xl flex gap-3'>
-                ₹ 5000 /-
-                </p>
-                <p className='text-base flex gap-3'>
-                    <StarIcon className='w-4'/>
-                    Hurry! 327 people have already applied in the last 1 month
-                </p>
-                <p className='flex gap-3'>
-                    <PhoneCallIcon size={16} />
-                    For enquiries call: 1800 210 2020
-                </p>
-            </div>
-               
             </div>
             <div className='flex justify-center items-center'>
                 <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXdvESU1dghCfTr2vPBLxudX-UhHT1vW4htQ&s"
                 alt='Loading image'
-                className='rounded-3xl bg-clip-border w-[500px]'
+                className='rounded-3xl bg-clip-border w-[700px]'
                 />
             </div>
 
+            <div className='flex items-center justify-center mt-10'>
+            <div className='flex absolute left-80 justify-between bottom-0 bg-gray-50 p-4 rounded-t-lg min-w-[1000px] px-10 py-10 z-50 shadow-lg'>
+                    <div className='flex flex-col justify-center items-center'>
+                        <p className='text-gray-800'>Type</p>
+                        <h3 className='bg-gradient-to-r from-amber-400 via-orange-600 to-red-600 inline-block text-transparent bg-clip-text text-2xl font-bold font-sans'>Degree</h3>
+                    </div>
+                    <div className='flex flex-col justify-center items-center'>
+                        <p className='text-gray-800'>Start Date</p>
+                        <h3 className='bg-gradient-to-r from-amber-400 via-orange-600 to-red-600 inline-block text-transparent bg-clip-text text-2xl font-bold font-sans'>30 April 2024</h3>
+                    </div>
+                    <div className='flex flex-col justify-center items-center'>
+                        <p className='text-gray-800'>End Date</p>
+                        <h3 className='bg-gradient-to-r from-amber-400 via-orange-600 to-red-600 inline-block text-transparent bg-clip-text text-2xl font-bold font-sans'>30 April 2024</h3>
+                    </div>
+                    <div className='flex flex-col justify-center items-center'>
+                        <p className='text-gray-800'>Duration</p>
+                        <h3 className='bg-gradient-to-r from-amber-400 via-orange-600 to-red-600 inline-block text-transparent bg-clip-text text-2xl font-bold font-sans'>6 months</h3>
+                    </div>
+                </div> 
+                </div>
+
         </div>
+
+        
            
         </div>
 
-        <div className='p-4 bg-gray-100 px-5'>
+        <div className='p-4 bg-white px-5'>
 
-          <div className='mx-5'>
+          <div className='mx-5 '>
             <div className='flex justify-center items-center'>
-            <h1 className='bg-gradient-to-r from-amber-400 via-orange-600 to-red-600 inline-block text-transparent bg-clip-text text-3xl font-bold font-sans'>
+            <h1 className='bg-black inline-block text-transparent bg-clip-text text-4xl font-bold font-sans my-10'>
                 About The Course
             </h1>
             </div>
-            <div className='flex'>
-            <div className='bg-gray-50 text-blue-600 p-3 rounded-md w-3/5'>
+
+            <div>
+            <div className='flex flex-row-reverse'>
+            <div className=' text-blue-900 p-3 rounded-md w-3/5 pl-10'>
               <p className='text-xl font-bold'>Data Science is a field that uses scientific methods, processes, algorithms, and systems to extract knowledge and insights from structured and unstructured data. It employs techniques and theories drawn from many fields within the context of mathematics, statistics, computer science, domain knowledge, and information science.</p>
-              <div className='grid grid-cols-2 m-4'>
+              <div className='grid grid-cols-2 m-4 gap-6'>
               <div>
-                <h1 className='text-lg'><FontAwesomeIcon icon={faCircleCheck} /> Industry Mentorship</h1>
-                <p className='text-base text-gray-600'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus fugit totam delectus laudantium exercitationem? Rem sequi amet asperiores illum ipsam.</p>
+                <h1 className='text-lg text-orange-700 font-bold'><FontAwesomeIcon icon={faCircleCheck} className='text-green-500' /> Industry Mentorship</h1>
+                <p className='text-base text-gray-500'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus fugit totam delectus laudantium exercitationem? </p>
               </div>
+
               <div>
-                <h1 className='text-lg'><FontAwesomeIcon icon={faCircleCheck} /> Industry Mentorship</h1>
-                <p className='text-base text-gray-600'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus fugit totam delectus laudantium exercitationem? Rem sequi amet asperiores illum ipsam.</p>
+                <h1 className='text-lg text-orange-700 font-bold'><FontAwesomeIcon icon={faCircleCheck} className='text-green-500' /> Industry Mentorship</h1>
+                <p className='text-base text-gray-500'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus fugit totam delectus laudantium exercitationem? </p>
               </div>
+
               <div>
-                <h1 className='text-lg'><FontAwesomeIcon icon={faCircleCheck} /> Industry Mentorship</h1>
-                <p className='text-base text-gray-600'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus fugit totam delectus laudantium exercitationem? Rem sequi amet asperiores illum ipsam.</p>
+                <h1 className='text-lg text-orange-700 font-bold'><FontAwesomeIcon icon={faCircleCheck} className='text-green-500' /> Industry Mentorship</h1>
+                <p className='text-base text-gray-500'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus fugit totam delectus laudantium exercitationem? </p>
               </div>
+
               <div>
-                <h1 className='text-lg'><FontAwesomeIcon icon={faCircleCheck} /> Industry Mentorship</h1>
-                <p className='text-base text-gray-600'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus fugit totam delectus laudantium exercitationem? Rem sequi amet asperiores illum ipsam.</p>
+                <h1 className='text-lg text-orange-700 font-bold'><FontAwesomeIcon icon={faCircleCheck} className='text-green-500' /> Industry Mentorship</h1>
+                <p className='text-base text-gray-500'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus fugit totam delectus laudantium exercitationem? </p>
               </div>
+
               <div>
-                <h1 className='text-lg'><FontAwesomeIcon icon={faCircleCheck} /> Industry Mentorship</h1>
-                <p className='text-base text-gray-600'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus fugit totam delectus laudantium exercitationem? Rem sequi amet asperiores illum ipsam.</p>
+                <h1 className='text-lg text-orange-700 font-bold'><FontAwesomeIcon icon={faCircleCheck} className='text-green-500' /> Industry Mentorship</h1>
+                <p className='text-base text-gray-500'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus fugit totam delectus laudantium exercitationem? </p>
               </div>
+
               <div>
-                <h1 className='text-lg'><FontAwesomeIcon icon={faCircleCheck} /> Industry Mentorship</h1>
-                <p className='text-base text-gray-600'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus fugit totam delectus laudantium exercitationem? Rem sequi amet asperiores illum ipsam.</p>
+                <h1 className='text-lg text-orange-700 font-bold'><FontAwesomeIcon icon={faCircleCheck} className='text-green-500' /> Industry Mentorship</h1>
+                <p className='text-base text-gray-500'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus fugit totam delectus laudantium exercitationem? </p>
               </div>
+              
               </div>
             </div>
-
             <div className='bg-gray-50 text-blue-600 div-3 text-2xl font-bold rounded-md w-2/5 h-1/5'>
                <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4FAuSwgzuz-CeH4_GEzIEQRScYeh3i3M9RQ&s' alt='/' className='w-full h-full' />
             </div>
             </div>
 
+            {/* <div className='bg-gray-50 text-blue-600 div-3 text-2xl font-bold rounded-md w-2/5 h-1/5'>
+               <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4FAuSwgzuz-CeH4_GEzIEQRScYeh3i3M9RQ&s' alt='/' className='w-full h-full' />
+            </div> */}
+            </div>
+            </div>
+
             <br />
+            <div className='flex flex-col justify-center items-center  p-10'>
             <p className='bg-gradient-to-r from-amber-400 via-orange-600 to-red-600 inline-block text-transparent bg-clip-text text-xs font-bold font-sans'>
                 Key Highlights Of LJMUs MS In Data Science
             </p>
-            
-            <div>
-            <h1 className='text-2xl font-bold bg-gradient-to-r from-amber-300 via-orange-500 to-red-600 text-transparent bg-clip-text font-body bg-blue-100 w-fit p-2 rounded-md mt-3'>
-                What does this course have to offer?
+            <h1 className='text-4xl font-bold bg-black text-transparent bg-clip-text font-body w-fit rounded-md '>
+                What we offer <span className=' bg-gradient-to-r from-orange-500 to-red-600 text-transparent bg-clip-text'> during this course? </span>
             </h1>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-           <div className="bg-gray-200 p-4 rounded-md flex flex-col items-center">
-            <h2 className="text-xl font-bold">Key Achievements</h2>
-            <p className='text-base'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta dicta assumenda, quas odio, animi quae sapiente rem ex, suscipit dolorem amet molestias! Sint cupiditate exercitationem cumque cum, voluptatibus eum ullam quia vero unde nostrum dolorum eos debitis earum sunt atque ducimus delectus aspernatur saepe enim facere expedita. Tempora, molestias corporis!</p>
+            <div className="flex flex-wrap items-center justify-center gap-4">
+           <div className="bg-white border border-gray-200 p-4 rounded-md flex flex-col items-center justify-center w-1/3">
+            <h2 className="text-2xl font-bold p-2">Key Achievements</h2>
+            <h1 className='text-md text-gray-500 '><FontAwesomeIcon icon={faCircleCheck} className='text-green-500' /> Industry Mentorship</h1>
+            <h1 className='text-md text-gray-500'><FontAwesomeIcon icon={faCircleCheck} className='text-green-500' /> Industry Mentorship</h1>
+            <h1 className='text-md text-gray-500'><FontAwesomeIcon icon={faCircleCheck} className='text-green-500' /> Industry Mentorship</h1>
+            <h1 className='text-md text-gray-500'><FontAwesomeIcon icon={faCircleCheck} className='text-green-500' /> Industry Mentorship</h1>
+            <h1 className='text-md text-gray-500'><FontAwesomeIcon icon={faCircleCheck} className='text-green-500' /> Industry Mentorship</h1>
            </div>
-           <div className="bg-gray-200 p-4 rounded-md flex flex-col items-center">
-            <h2 className="text-xl font-bold">Specializations</h2>
-            <p className='text-base'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus fuga odio cupiditate error labore vero architecto voluptatem, impedit non voluptatum saepe, nobis sit voluptates totam temporibus maxime quasi quas cum nemo voluptatibus quia veritatis expedita, odit nulla. Ad, vitae accusamus, placeat magni iure cumque corporis labore libero necessitatibus numquam consequuntur.</p>
+           <div className="bg-white border border-gray-200 p-4 rounded-md flex flex-col items-center justify-center w-1/3">
+            <h2 className="text-2xl font-bold p-2">Specializations</h2>
+            <h1 className='text-md text-gray-500 '><FontAwesomeIcon icon={faCircleCheck} className='text-green-500' /> Industry Mentorship</h1>
+            <h1 className='text-md text-gray-500 '><FontAwesomeIcon icon={faCircleCheck} className='text-green-500' /> Industry Mentorship</h1>
+            <h1 className='text-md text-gray-500 '><FontAwesomeIcon icon={faCircleCheck} className='text-green-500' /> Industry Mentorship</h1>
+            <h1 className='text-md text-gray-500 '><FontAwesomeIcon icon={faCircleCheck} className='text-green-500' /> Industry Mentorship</h1>
+            <h1 className='text-md text-gray-500 '><FontAwesomeIcon icon={faCircleCheck} className='text-green-500' /> Industry Mentorship</h1>
            </div>
-           <div className="bg-gray-200 p-4 rounded-md flex flex-col items-center">
-            <h2 className="text-xl font-bold">Career Assistance</h2>
-            <p className='text-base'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil aut, molestias, asperiores in doloribus temporibus quia excepturi omnis vero cupiditate reiciendis repudiandae. Possimus, tenetur quo debitis quos eius necessitatibus illo quidem distinctio ad! Reiciendis adipisci veniam dolores quo recusandae iusto corrupti praesentium quia obcaecati. Laboriosam doloremque ut magnam voluptas rerum.</p>
+           <div className="bg-white border border-gray-200 p-4 rounded-md flex flex-col items-center justify-center w-1/3">
+            <h2 className="text-2xl font-bold p-2">Career Assistance</h2>
+            <h1 className='text-md text-gray-500 '><FontAwesomeIcon icon={faCircleCheck} className='text-green-500' /> Industry Mentorship</h1>
+            <h1 className='text-md text-gray-500 '><FontAwesomeIcon icon={faCircleCheck} className='text-green-500' /> Industry Mentorship</h1>
+            <h1 className='text-md text-gray-500 '><FontAwesomeIcon icon={faCircleCheck} className='text-green-500' /> Industry Mentorship</h1>
+            <h1 className='text-md text-gray-500 '><FontAwesomeIcon icon={faCircleCheck} className='text-green-500' /> Industry Mentorship</h1>
+            <h1 className='text-md text-gray-500 '><FontAwesomeIcon icon={faCircleCheck} className='text-green-500' /> Industry Mentorship</h1>
            </div>
-           <div className="bg-gray-200 p-4 rounded-md flex flex-col items-center">
-            <h2 className="text-xl font-bold">Student Support</h2>
-            <p className='text-base'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto recusandae cumque quos excepturi eos voluptates assumenda officia, quis perferendis eum est voluptate optio velit aut nobis fuga natus iste vel incidunt explicabo pariatur tempora doloremque voluptatem! Iusto consectetur vitae esse quod, facere, magni tempora vel aliquid dignissimos et temporibus cumque?</p>
+           <div className="bg-white border border-gray-200 p-4 rounded-md flex flex-col items-center justify-center w-1/3">
+            <h2 className="text-2xl font-bold p-2">Student Support</h2>
+            <h1 className='text-md text-gray-500 '><FontAwesomeIcon icon={faCircleCheck} className='text-green-500' /> Industry Mentorship</h1>
+            <h1 className='text-md text-gray-500 '><FontAwesomeIcon icon={faCircleCheck} className='text-green-500' /> Industry Mentorship</h1>
+            <h1 className='text-md text-gray-500 '><FontAwesomeIcon icon={faCircleCheck} className='text-green-500' /> Industry Mentorship</h1>
+            <h1 className='text-md text-gray-500 '><FontAwesomeIcon icon={faCircleCheck} className='text-green-500' /> Industry Mentorship</h1>
+            <h1 className='text-md text-gray-500 '><FontAwesomeIcon icon={faCircleCheck} className='text-green-500' /> Industry Mentorship</h1>
           </div>
          </div>
             </div>
 
             <br />
         <div>
+
+        <div className="flex items-center justify-center gap-5 pt-10 pb-4">
+      <div className="max-w-screen-lg p-4 bg-white">
+      <div className="flex justify-center items-center p-5">
+      <h1 className="text-4xl font-bold bg-gradient-to-r from-orange-600 to-red-600 text-transparent bg-clip-text">Master these Tools</h1>
+      </div>
+      <div className="flex items-center justify-center gap-5 pb-4">
+      <FontAwesomeIcon icon={faArrowLeft} onClick={() => handleArrow("left")} className="text-gray-600 p-3 text-lg hover:text-black rounded-full bg-white" />
+      <FontAwesomeIcon icon={faArrowRight} onClick={() => handleArrow("right")} className="text-gray-600 p-3 text-lg hover:text-black rounded-full bg-white" />
+      </div>
+     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 ">
+     {displayedSkills.map((skill) => (
+        <div key={skill.id} className="border h-4/6 w-4/6 border-gray-300 p-4 rounded-3xl bg-white flex flex-col justify-center items-center">
+          <img src={skill.image} alt='/' className='h-full w-full' />
+        </div>
+      ))}
+      </div>
+      </div>
+      </div>
+
         <div className="flex flex-col px-4">
       {/* <div>
         <Syllabus/>
   </div> */}
-      <h1 className='text-2xl font-bold bg-gradient-to-r from-amber-300 via-orange-500 to-red-600 text-transparent bg-clip-text font-body bg-blue-100 w-fit p-2 rounded-md mt-3'>
-         What our learners have achieved
+     <div className='flex justify-center items-center'>
+      <h1 className='text-4xl font-bold bg-black text-transparent bg-clip-text font-body w-fit p-5 rounded-md mt-3'>
+         What our learners <span className=' bg-gradient-to-r from-orange-500 to-red-600 text-transparent bg-clip-text'>have achieved</span>
       </h1>
-      <div className='grid grid-cols-2 bg-gray-200 justify-between p-4 rounded-lg w-1/2'>
+      </div>
+      <div className='flex justify-center items-center'>
+      <div className='grid grid-cols-2 bg-white border border-gray-200 justify-between p-4 rounded-lg w-1/2 gap-4'>
           <div>
               <p className='text-gray-800'>Avg. Salary Hike</p>
               <h3 className='bg-gradient-to-r from-amber-400 via-orange-600 to-red-600 inline-block text-transparent bg-clip-text text-2xl font-bold font-sans'>40%</h3>
@@ -311,29 +447,11 @@ function DS() {
               <h3 className='bg-gradient-to-r from-amber-400 via-orange-600 to-red-600 inline-block text-transparent bg-clip-text text-2xl font-bold font-sans'>90%</h3>
           </div>
       </div>
+      </div>
 
       <br />
 
-      <div className="flex items-center justify-center gap-5 pt-10 pb-4">
-      <div className="max-w-screen-lg p-4 bg-gray-100">
-      <div className="flex justify-center items-center p-5">
-      <h1 className="text-4xl font-bold uppercase bg-gradient-to-r from-orange-600 to-red-600 text-transparent bg-clip-text">Master these Tools</h1>
-      </div>
-      <div className="flex items-center justify-center gap-5 pb-4">
-      <FontAwesomeIcon icon={faArrowLeft} onClick={() => handleArrowClick2("left")} className="text-gray-600 p-3 text-lg hover:text-black rounded-full bg-white" />
-      <FontAwesomeIcon icon={faArrowRight} onClick={() => handleArrowClick2("right")} className="text-gray-600 p-3 text-lg hover:text-black rounded-full bg-white" />
-      </div>
-     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 ">
-     {displayedSkills.map((skill) => (
-        <div key={skill.id} className="border h-4/6 w-4/6 border-gray-300 p-4 rounded-3xl bg-white flex flex-col justify-center items-center">
-          <img src={skill.image} alt='/' className='h-full w-full' />
-        </div>
-      ))}
-      </div>
-      </div>
-      </div>
-
-      <div className="flex items-center justify-center gap-5 pt-10 pb-4">
+      {/* <div className="flex items-center justify-center gap-5 pt-10 pb-4">
       <div className="max-w-screen-xl p-4 bg-gray-50">
       <div className="flex justify-center items-center p-5">
       <h1 className="text-4xl font-bold uppercase bg-gradient-to-r from-orange-600 to-red-600 text-transparent bg-clip-text">Our Mentors</h1>
@@ -353,12 +471,38 @@ function DS() {
       ))}
       </div>
       </div>
+      </div> */}
+
+<div className="flex items-center justify-center gap-5 pt-10 pb-4">
+      <div className="max-w-screen-xl p-4 bg-gray-50">
+        <div className="flex justify-center items-center p-5">
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-orange-600 to-red-600 text-transparent bg-clip-text">Our Mentors</h1>
+        </div>
+        <div className="flex items-center justify-center gap-5 pb-4">
+          <FontAwesomeIcon icon={faArrowLeft} onClick={() => handleArrowClick("left")} className="text-gray-600 p-3 text-lg hover:text-black rounded-full bg-white" />
+          <FontAwesomeIcon icon={faArrowRight} onClick={() => handleArrowClick("right")} className="text-gray-600 p-3 text-lg hover:text-black rounded-full bg-white" />
+        </div>
+        <div className="swiper-container">
+          <div className="swiper-wrapper flex flex-row flex-wrap justify-center items-center gap-4">
+          {/* <div className='flex flex-row'> */}
+            {displayedJobs.map((mentor) => (
+              <SwiperSlide key={mentor.id} className="swiper-slide">
+                <div className="border border-gray-300 p-4 rounded-md bg-white flex flex-col justify-center items-center">
+                  <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXdvESU1dghCfTr2vPBLxudX-UhHT1vW4htQ&s' alt='/' />
+                  <h2 className="text-2xl font-bold">{mentor.name}</h2>
+                  <p className="text-xl text-blue-900 font-semibold">{mentor.company}</p>
+                  <p className="text-xl text-blue-900 font-semibold">{mentor.experience}</p>
+                </div>
+              </SwiperSlide>
+            ))}
+            {/* </div> */}
       </div>
+    </div>
 
       <div className="flex items-center justify-center gap-5 pt-10 pb-4">
-      <div className="max-w-screen-lg p-4 bg-gray-100">
+      <div className="max-w-screen-lg p-4 bg-white">
       <div className="flex justify-center items-center p-5">
-      <h1 className="text-3xl font-bold bg-gradient-to-r from-orange-600 to-red-600 text-transparent bg-clip-text">Our Alumni are placed at...</h1>
+      <h1 className="text-3xl font-bold pb-4 bg-gradient-to-r from-orange-600 to-red-600 text-transparent bg-clip-text">Our Alumni are placed at...</h1>
       </div>
      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 ">
      {dummyAlumni.map((skill) => (
@@ -392,101 +536,178 @@ function DS() {
     </div>
     </div>
 
-      <div className='items-start justify-start flex-col flex '>
+      <div className=' flex-col flex '>
 
-      <div className='bg-blue-100 text-blue-600 p-3 text-3xl font-bold rounded-md'> 
-          <h1>FAQs regarding Data Science Courses</h1>
+      <div className=' text-black py-5 pt-10 flex justify-center text-center items-center text-3xl font-bold rounded-md'> 
+          <h1>FAQs regarding <span className='bg-gradient-to-r from-orange-500 to-red-600 text-transparent bg-clip-text'> Data Science Courses</span></h1>
       </div>
         
         <br />
 
-      <Accordion className='w-1/2'>
-      <AccordionItem key="1" aria-label="Accordion 1" title="Question 1" className='hover:bg-blue-300 px-4 rounded-md'>
-       <h1>Test</h1> 
-      </AccordionItem>
-      <AccordionItem key="2" aria-label="Accordion 2" title="Question 2" className='hover:bg-blue-300 px-4 rounded-md'>
-       <h1>Test 2</h1>
-      </AccordionItem>
-      <AccordionItem key="3" aria-label="Accordion 3" title="Question 3" className='hover:bg-blue-300 px-4 rounded-md'>
-        <h1>Test 3</h1>
-      </AccordionItem>
-    </Accordion>
-      </div>
-    </div>
-        </div>
-        </div>
-     
-        <div className="min-h-screen flex items-center justify-center bg-gray-200">
-        <div className="max-w-xl w-full p-8 bg-white rounded-md shadow-lg">
-        <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">Not sure about the course?</h2>
-        <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">Dont worry Contact with us</h2>
-        <form className="space-y-4">
-        <div>
-            <label htmlFor="name" className="block text-sm font-semibold text-gray-800">
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              className="w-full p-3 border-b-2 border-gray-400 focus:outline-none focus:border-blue-500 transition duration-300"
-              placeholder="Enter your name"
-            />
-          </div>
-          <div>
-            <label htmlFor="email" className="block text-sm font-semibold text-gray-800">
-              Email-Id
-            </label>
-            <input
-              type="email"
-              id="email"
-              className="w-full p-3 border-b-2 border-gray-400 focus:outline-none focus:border-blue-500 transition duration-300"
-              placeholder="Enter your Email-Id"
-            />
-          </div>
-          <div>
-            <label htmlFor="phonenumber" className="block text-sm font-semibold text-gray-800">
-              Phone Number
-            </label>
-            <input
-              type="Number"
-              id="phonenumber"
-              className="w-full p-3 border-b-2 border-gray-400 focus:outline-none focus:border-blue-500 transition duration-300"
-              placeholder="Enter your Phone Number"
-            />
-          </div>
-          <div>
-            <label htmlFor="city" className="block text-sm font-semibold text-gray-800">
-              City
-            </label>
-            <input
-              type="text"
-              id="city"
-              className="w-full p-3 border-b-2 border-gray-400 focus:outline-none focus:border-blue-500 transition duration-300"
-              placeholder="Enter your city"
-            />
-          </div>
-          <div>
-            <label htmlFor="message" className="block text-sm font-semibold text-gray-800">
-              Message
-            </label>
-            <textarea
-              rows={4}
-              id="message"
-              className="w-full p-3 border-b-2 border-gray-400 focus:outline-none focus:border-blue-500 transition duration-300"
-              placeholder="Enter your message"
-            />
-          </div>
+    <div className='flex justify-center items-center px-10 text-lg'>
+      <div className='w-1/2 flex flex-col gap-2 mr-2'>
+        <div className="accordion-item">
           <button
-            type="button"
-            className="w-full bg-blue-500 text-white py-3 rounded-md hover:bg-blue-600 transition duration-300"
+            className={`accordion-title justify-between flex items-center w-full ${isOpen ? 'accordion-open' : ''} bg-gray-200 hover:bg-gray-300 py-2 px-4 rounded-md`}
+            onClick={toggleAccordion}
+            aria-expanded={isOpen}
           >
-            Submit
+            <span>Question 1</span>
+            <span className="accordion-icon">{isOpen ? '-' : '+'}</span>
           </button>
-        </form>
+          {isOpen && (
+            <div className="accordion-content bg-gray-100 py-2 px-4">
+              Answer
+            </div>
+          )}
+        </div>
+        <div className="accordion-item">
+          <button
+            className={`accordion-title justify-between flex items-center w-full ${isOpen2 ? 'accordion-open' : ''} bg-gray-200 hover:bg-gray-300 py-2 px-4 rounded-md`}
+            onClick={toggleAccordion2}
+            aria-expanded={isOpen2}
+          >
+            <span>Question 2</span>
+            <span className="accordion-icon">{isOpen2 ? '-' : '+'}</span>
+          </button>
+          {isOpen2 && (
+            <div className="accordion-content bg-gray-100 py-2 px-4">
+              Answer
+            </div>
+          )}
+        </div>
+        <div className="accordion-item">
+          <button
+            className={`accordion-title justify-between flex items-center w-full ${isOpen3 ? 'accordion-open' : ''} bg-gray-200 hover:bg-gray-300 py-2 px-4 rounded-md`}
+            onClick={toggleAccordion3}
+            aria-expanded={isOpen3}
+          >
+            <span>Question 2</span>
+            <span className="accordion-icon">{isOpen3 ? '-' : '+'}</span>
+          </button>
+          {isOpen3 && (
+            <div className="accordion-content bg-gray-100 py-2 px-4">
+              Answer
+            </div>
+          )}
+        </div>
+        <div className="accordion-item">
+          <button
+            className={`accordion-title justify-between flex items-center w-full ${isOpen4 ? 'accordion-open' : ''} bg-gray-200 hover:bg-gray-300 py-2 px-4 rounded-md`}
+            onClick={toggleAccordion4}
+            aria-expanded={isOpen4}
+          >
+            <span>Question 2</span>
+            <span className="accordion-icon">{isOpen4 ? '-' : '+'}</span>
+          </button>
+          {isOpen4 && (
+            <div className="accordion-content bg-gray-100 py-2 px-4">
+              Answer
+            </div>
+          )}
+        </div>
+        <div className="accordion-item">
+          <button
+            className={`accordion-title justify-between flex items-center w-full ${isOpen5 ? 'accordion-open' : ''} bg-gray-200 hover:bg-gray-300 py-2 px-4 rounded-md`}
+            onClick={toggleAccordion5}
+            aria-expanded={isOpen5}
+          >
+            <span>Question 2</span>
+            <span className="accordion-icon">{isOpen5 ? '-' : '+'}</span>
+          </button>
+          {isOpen5 && (
+            <div className="accordion-content bg-gray-100 py-2 px-4">
+              Answer
+            </div>
+          )}
+        </div>
+      </div>
+      <div className='w-1/2 flex flex-col gap-2'>
+      <div className="accordion-item">
+          <button
+            className={`accordion-title justify-between flex items-center w-full ${isOpen6 ? 'accordion-open' : ''} bg-gray-200 hover:bg-gray-300 py-2 px-4 rounded-md`}
+            onClick={toggleAccordion6}
+            aria-expanded={isOpen6}
+          >
+            <span>Question 2</span>
+            <span className="accordion-icon">{isOpen6 ? '-' : '+'}</span>
+          </button>
+          {isOpen6 && (
+            <div className="accordion-content bg-gray-100 py-2 px-4">
+              Answer
+            </div>
+          )}
+        </div>
+        <div className="accordion-item">
+          <button
+            className={`accordion-title justify-between flex items-center w-full ${isOpen7 ? 'accordion-open' : ''} bg-gray-200 hover:bg-gray-300 py-2 px-4 rounded-md`}
+            onClick={toggleAccordion7}
+            aria-expanded={isOpen7}
+          >
+            <span>Question 2</span>
+            <span className="accordion-icon">{isOpen7 ? '-' : '+'}</span>
+          </button>
+          {isOpen7 && (
+            <div className="accordion-content bg-gray-100 py-2 px-4">
+              Answer
+            </div>
+          )}
+        </div>
+        <div className="accordion-item">
+          <button
+            className={`accordion-title justify-between flex items-center w-full ${isOpen8 ? 'accordion-open' : ''} bg-gray-200 hover:bg-gray-300 py-2 px-4 rounded-md`}
+            onClick={toggleAccordion8}
+            aria-expanded={isOpen8}
+          >
+            <span>Question 2</span>
+            <span className="accordion-icon">{isOpen8 ? '-' : '+'}</span>
+          </button>
+          {isOpen8 && (
+            <div className="accordion-content bg-gray-100 py-2 px-4">
+              Answer
+            </div>
+          )}
+        </div>
+        <div className="accordion-item">
+          <button
+            className={`accordion-title justify-between flex items-center w-full ${isOpen9 ? 'accordion-open' : ''} bg-gray-200 hover:bg-gray-300 py-2 px-4 rounded-md`}
+            onClick={toggleAccordion9}
+            aria-expanded={isOpen9}
+          >
+            <span>Question 2</span>
+            <span className="accordion-icon">{isOpen9 ? '-' : '+'}</span>
+          </button>
+          {isOpen9 && (
+            <div className="accordion-content bg-gray-100 py-2 px-4">
+              Answer
+            </div>
+          )}
+        </div>
+        <div className="accordion-item">
+          <button
+            className={`accordion-title justify-between flex items-center w-full ${isOpen10 ? 'accordion-open' : ''} bg-gray-200 hover:bg-gray-300 py-2 px-4 rounded-md`}
+            onClick={toggleAccordion10}
+            aria-expanded={isOpen10}
+          >
+            <span>Question 2</span>
+            <span className="accordion-icon">{isOpen10 ? '-' : '+'}</span>
+          </button>
+          {isOpen10 && (
+            <div className="accordion-content bg-gray-100 py-2 px-4">
+              Answer
+            </div>
+          )}
+        </div>
       </div>
     </div>
+      </div>
+    </div>
+        </div>
+        </div>
+    
     <Footer />
     </div>
+    </>
   )
 }
 
