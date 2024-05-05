@@ -213,11 +213,11 @@ function DS() {
   return (
     <>
      {/* <Header /> */}
-        <div className='flex relative flex-col justify-center items-center pt-20 bg-white'>
+     <div className='flex relative flex-col justify-center items-center pt-20 bg-white'>
 
-        <div className='flex justify-around bg-gray-100 max-w-0.7 w-full rounded-2xl min-h-[700px]'>
+        <div className='flex flex-col-reverse md:flex-row justify-around bg-gray-100 max-w-0.7 w-full rounded-2xl min-h-[700px]'>
 
-            <div className=' flex-col items-center justify-around p-8 w-1/2'>
+            <div className=' flex-col items-center justify-around p-8 w-full md:w-1/2'>
 
                 <Chip color="primary" className='bg-green-400 px-3 py-2 rounded-lg'>BestSeller</Chip>
 
@@ -247,7 +247,7 @@ function DS() {
                 </p>
             </div>
                 <br />
-                <div className='flex gap-8'>
+                <div className='flex flex-col md:flex-row gap-5'>
                 <Button className='bg-orange-400 hover:bg-orange-500 text-white font-bold rounded-lg p-2 min-w-44'>
                         Enroll Now
                     </Button>
@@ -267,8 +267,9 @@ function DS() {
                 />
             </div>
 
-            <div className='flex items-center justify-center mt-10'>
-            <div className='flex absolute left-80 justify-between bottom-0 bg-gray-50 p-4 rounded-t-lg min-w-[1000px] px-10 py-10 z-50 shadow-lg'>
+
+            <div className='flex flex-col-reverse md:flex-row items-center justify-center mt-10'>
+            <div className='flex flex-col md:flex-row md:absolute md:left-80 justify-between bottom-0 bg-gray-50 p-4 rounded-t-lg w-full md:min-w-[1000px] px-10 py-10 z-50 shadow-lg'>
                     <div className='flex flex-col justify-center items-center'>
                         <p className='text-gray-800'>Type</p>
                         <h3 className='bg-gradient-to-r from-amber-400 via-orange-600 to-red-600 inline-block text-transparent bg-clip-text text-2xl font-bold font-sans'>Degree</h3>
@@ -288,6 +289,8 @@ function DS() {
                 </div> 
                 </div>
 
+
+
         </div>
 
         
@@ -304,10 +307,10 @@ function DS() {
             </div>
 
             <div>
-            <div className='flex flex-row-reverse'>
-            <div className=' text-blue-900 p-3 rounded-md w-3/5 pl-10'>
+            <div className='flex flex-col md:flex-row-reverse '>
+            <div className=' text-blue-900 p-3 rounded-md w-full md:w-3/5 pl-10'>
               <p className='text-xl font-bold'>Data Science is a field that uses scientific methods, processes, algorithms, and systems to extract knowledge and insights from structured and unstructured data. It employs techniques and theories drawn from many fields within the context of mathematics, statistics, computer science, domain knowledge, and information science.</p>
-              <div className='grid grid-cols-2 m-4 gap-6'>
+              <div className='grid grid-cols-1 md:grid-cols-2 m-4 gap-6'>
               <div>
                 <h1 className='text-lg text-orange-700 font-bold'><FontAwesomeIcon icon={faCircleCheck} className='text-green-500' /> Industry Mentorship</h1>
                 <p className='text-base text-gray-500'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus fugit totam delectus laudantium exercitationem? </p>
@@ -340,7 +343,7 @@ function DS() {
               
               </div>
             </div>
-            <div className='bg-gray-50 text-blue-600 div-3 text-2xl font-bold rounded-md w-2/5 h-1/5'>
+            <div className='bg-gray-50 text-blue-600 div-3 text-2xl font-bold rounded-md w-full md:w-2/5 h-1/5'>
                <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4FAuSwgzuz-CeH4_GEzIEQRScYeh3i3M9RQ&s' alt='/' className='w-full h-full' />
             </div>
             </div>
@@ -361,8 +364,8 @@ function DS() {
             </h1>
             </div>
 
-            <div className="flex flex-wrap items-center justify-center gap-4">
-           <div className="bg-white border border-gray-200 p-4 rounded-md flex flex-col items-center justify-center w-1/3">
+            <div className="flex flex-wrap flex-col md:flex-row items-center justify-center gap-4">
+           <div className="bg-white border border-gray-200 p-4 rounded-md flex flex-col items-center justify-center w-full md:w-1/3">
             <h2 className="text-2xl font-bold p-2">Key Achievements</h2>
             <h1 className='text-md text-gray-500 '><FontAwesomeIcon icon={faCircleCheck} className='text-green-500' /> Industry Mentorship</h1>
             <h1 className='text-md text-gray-500'><FontAwesomeIcon icon={faCircleCheck} className='text-green-500' /> Industry Mentorship</h1>
@@ -370,7 +373,7 @@ function DS() {
             <h1 className='text-md text-gray-500'><FontAwesomeIcon icon={faCircleCheck} className='text-green-500' /> Industry Mentorship</h1>
             <h1 className='text-md text-gray-500'><FontAwesomeIcon icon={faCircleCheck} className='text-green-500' /> Industry Mentorship</h1>
            </div>
-           <div className="bg-white border border-gray-200 p-4 rounded-md flex flex-col items-center justify-center w-1/3">
+           <div className="bg-white border border-gray-200 p-4 rounded-md flex flex-col items-center justify-center w-full md:w-1/3">
             <h2 className="text-2xl font-bold p-2">Specializations</h2>
             <h1 className='text-md text-gray-500 '><FontAwesomeIcon icon={faCircleCheck} className='text-green-500' /> Industry Mentorship</h1>
             <h1 className='text-md text-gray-500 '><FontAwesomeIcon icon={faCircleCheck} className='text-green-500' /> Industry Mentorship</h1>
@@ -378,7 +381,7 @@ function DS() {
             <h1 className='text-md text-gray-500 '><FontAwesomeIcon icon={faCircleCheck} className='text-green-500' /> Industry Mentorship</h1>
             <h1 className='text-md text-gray-500 '><FontAwesomeIcon icon={faCircleCheck} className='text-green-500' /> Industry Mentorship</h1>
            </div>
-           <div className="bg-white border border-gray-200 p-4 rounded-md flex flex-col items-center justify-center w-1/3">
+           <div className="bg-white border border-gray-200 p-4 rounded-md flex flex-col items-center justify-center w-full md:w-1/3">
             <h2 className="text-2xl font-bold p-2">Career Assistance</h2>
             <h1 className='text-md text-gray-500 '><FontAwesomeIcon icon={faCircleCheck} className='text-green-500' /> Industry Mentorship</h1>
             <h1 className='text-md text-gray-500 '><FontAwesomeIcon icon={faCircleCheck} className='text-green-500' /> Industry Mentorship</h1>
@@ -386,7 +389,7 @@ function DS() {
             <h1 className='text-md text-gray-500 '><FontAwesomeIcon icon={faCircleCheck} className='text-green-500' /> Industry Mentorship</h1>
             <h1 className='text-md text-gray-500 '><FontAwesomeIcon icon={faCircleCheck} className='text-green-500' /> Industry Mentorship</h1>
            </div>
-           <div className="bg-white border border-gray-200 p-4 rounded-md flex flex-col items-center justify-center w-1/3">
+           <div className="bg-white border border-gray-200 p-4 rounded-md flex flex-col items-center justify-center w-full md:w-1/3">
             <h2 className="text-2xl font-bold p-2">Student Support</h2>
             <h1 className='text-md text-gray-500 '><FontAwesomeIcon icon={faCircleCheck} className='text-green-500' /> Industry Mentorship</h1>
             <h1 className='text-md text-gray-500 '><FontAwesomeIcon icon={faCircleCheck} className='text-green-500' /> Industry Mentorship</h1>
@@ -429,7 +432,7 @@ function DS() {
       </h1>
       </div>
       <div className='flex justify-center items-center'>
-      <div className='grid grid-cols-2 bg-white border border-gray-200 justify-between p-4 rounded-lg w-1/2 gap-4'>
+      <div className='grid grid-cols-2 bg-white border border-gray-200 justify-between p-4 rounded-lg w-full md:w-1/2 gap-4'>
           <div>
               <p className='text-gray-800'>Avg. Salary Hike</p>
               <h3 className='bg-gradient-to-r from-amber-400 via-orange-600 to-red-600 inline-block text-transparent bg-clip-text text-2xl font-bold font-sans'>40%</h3>
@@ -520,7 +523,7 @@ function DS() {
     </h1>
     <div className="flex flex-col md:flex-row justify-between items-center">
     {/* Left side content */}
-    <div className="w-2/3 p-4">
+    <div className="w-full md:w-2/3 p-4">
         {/* Content here */}
         <h2 className="text-base font-bold mb-4">Once you compliete the course video, assignments and quizzes you will be able to generate the certificate</h2>
         <ul>
@@ -530,7 +533,7 @@ function DS() {
         </ul>
     </div>
     {/* Right side image */}
-    <div className="w-1/3">
+    <div className="w-full md:w-1/3">
         <img src="https://skilledup.tech/assets/img/team/certificate.jpg" alt="Image" className="w-full h-auto" />
     </div>
     </div>
@@ -544,8 +547,8 @@ function DS() {
         
         <br />
 
-    <div className='flex justify-center items-center px-10 text-lg'>
-      <div className='w-1/2 flex flex-col gap-2 mr-2'>
+    <div className='flex flex-col md:flex-row justify-center items-center px-10 text-lg'>
+      <div className='w-full md:w-1/2 flex flex-col gap-2 md:mr-2'>
         <div className="accordion-item">
           <button
             className={`accordion-title justify-between flex items-center w-full ${isOpen ? 'accordion-open' : ''} bg-gray-200 hover:bg-gray-300 py-2 px-4 rounded-md`}
@@ -622,10 +625,10 @@ function DS() {
           )}
         </div>
       </div>
-      <div className='w-1/2 flex flex-col gap-2'>
+      <div className='w-full md:w-1/2 flex flex-col gap-2'>
       <div className="accordion-item">
           <button
-            className={`accordion-title justify-between flex items-center w-full ${isOpen6 ? 'accordion-open' : ''} bg-gray-200 hover:bg-gray-300 py-2 px-4 rounded-md`}
+            className={`accordion-title justify-between flex items-center w-full ${isOpen6 ? 'accordion-open' : ''} bg-gray-200 hover:bg-gray-300 py-2 px-4 mt-2 md:mt-0 rounded-md`}
             onClick={toggleAccordion6}
             aria-expanded={isOpen6}
           >
