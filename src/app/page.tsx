@@ -269,7 +269,7 @@ function DS() {
 
 
             <div className='flex flex-col-reverse md:flex-row items-center justify-center mt-10'>
-            <div className='flex flex-col md:flex-row md:absolute md:left-80 justify-between bottom-0 bg-gray-50 p-4 rounded-t-lg w-full md:min-w-[1000px] px-10 py-10 z-50 shadow-lg'>
+            <div className='flex flex-col md:flex-row md:absolute md:left-80 justify-between bottom-0 bg-gray-50 p-4 rounded-t-lg w-full md:w-[1000px] px-10 py-10 z-50 shadow-lg'>
                     <div className='flex flex-col justify-center items-center'>
                         <p className='text-gray-800'>Type</p>
                         <h3 className='bg-gradient-to-r from-amber-400 via-orange-600 to-red-600 inline-block text-transparent bg-clip-text text-2xl font-bold font-sans'>Degree</h3>
